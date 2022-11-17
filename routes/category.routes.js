@@ -1,15 +1,16 @@
 const express = require("express");
 const categoryController = require("../controllers/category.controller");
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 
-router.get("/", categoryController.getAllCategory);
+router
+  .route("/")
+  .get(categoryController.getAllCategory)
+  .post(categoryController.createCategory);
 
-router.get("/:categoryId", categoryController.getCategoryById);
-
-router.post("/", categoryController.createCategory);
-
-router.put("/:categoryId", categoryController.updateCategory);
-
-router.delete("/:categoryId", categoryController.deleteCategory);
+router
+  .route("/:id")
+  .get(categoryController.getCategoryById)
+  .put(categoryController.updateCategory)
+  .delete(categoryController.deleteCategory);
 
 module.exports = router;
