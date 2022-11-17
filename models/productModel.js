@@ -18,8 +18,14 @@ const productModel = sequelizeInstance.define(
       type: sequelize.DataTypes.BIGINT,
       notNull: true,
     },
-    categoryId: sequelize.DataTypes.BIGINT,
-    notNull: true,
+    categoryId: {
+      type: sequelize.DataTypes.BIGINT,
+      notNull: true,
+    },
   },
-  { timeStamps: false }
+  { timestamps: false }
 );
+
+productModel.sync({ alter: true });
+
+module.exports = productModel;

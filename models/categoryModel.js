@@ -1,7 +1,7 @@
 const sequelize = require("sequelize");
 const sequelizeInstance = require("../config/db.config");
 
-const categoryModel = new sequelizeInstance.create(
+const categoryModel = sequelizeInstance.define(
   "catgory",
   {
     id: {
@@ -15,7 +15,9 @@ const categoryModel = new sequelizeInstance.create(
       notNull: true,
     },
   },
-  { timeStamps: false }
+  { timestamps: false }
 );
+
+categoryModel.sync({ alter: true });
 
 module.exports = categoryModel;
