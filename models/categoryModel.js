@@ -18,6 +18,6 @@ const categoryModel = sequelizeInstance.define(
   { timestamps: false }
 );
 
-categoryModel.sync({ alter: true });
+// categoryModel.sync({ alter: true });
 
 module.exports = categoryModel;

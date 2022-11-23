@@ -26,6 +26,6 @@ const productModel = sequelizeInstance.define(
   { timestamps: false }
 );
 
-productModel.sync({ alter: true });
+// productModel.sync({ alter: true });
 
 module.exports = productModel;
