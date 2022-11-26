@@ -24,6 +24,7 @@ exports.singup = async (req, res) => {
   });
 
   res.status(201).json({
-    message: "succedd",
+    message: "success",
+    data: newUser,
   });
 };
