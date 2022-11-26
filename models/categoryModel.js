@@ -1,6 +1,5 @@
 const sequelize = require("sequelize");
 const sequelizeInstance = require("../config/db.config");
-
 const categoryModel = sequelizeInstance.define(
   "catgory",
   {
@@ -17,7 +16,5 @@ const categoryModel = sequelizeInstance.define(
   },
   { timestamps: false }
 );
-
-// categoryModel.sync({ alter: true });
 
 module.exports = categoryModel;

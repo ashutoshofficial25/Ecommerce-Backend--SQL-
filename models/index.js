@@ -1,5 +1,4 @@
 const db = {};
-
 db.roles = require("./Roles");
 db.user = require("./User");
 
