@@ -1,3 +1,3 @@
-export const constants = {
+exports.constants = {
   SECRET: "My-ramdom-secret",
 };

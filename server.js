@@ -2,11 +2,9 @@ const express = require("express");
 const serverConfig = require("./config/server.config");
 const apiRoutes = require("./routes/index");
 const dbConnection = require("./config/db.config");
-const Roles = require("./models/Roles");
-const Category = require("./models/categoryModel");
 const app = express();
 const bodyParser = require("body-parser");
-
+const db = require("./models");
 app.use(bodyParser.json());
 app.use("/api/v1", apiRoutes);
 
@@ -17,7 +15,7 @@ const init = async () => {
 };
 
 let insertCategories = async () => {
-  await Category.bulkCreate([
+  await db.category.bulkCreate([
     {
       name: "Fashion",
     },
@@ -34,7 +32,7 @@ let insertCategories = async () => {
 };
 
 const insertRoles = async () => {
-  Roles.bulkCreate([
+  db.roles.bulkCreate([
     {
       id: 1,
       name: "user",

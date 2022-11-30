@@ -1,5 +1,5 @@
-const errorHandler = require("../middlewares/errorHandler");
-const productModel = require("../models/productModel");
+const db = require("../models");
+const productModel = db.product;
 const commonController = require("./commonController");
 
 const getAllProducts = commonController.findAll(productModel);

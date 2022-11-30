@@ -1,4 +1,5 @@
-const categoryModel = require("../models/categoryModel");
+const db = require("../models");
+const categoryModel = db.category;
 const commonController = require("./commonController");
 
 const getAllCategory = commonController.findAll(categoryModel);
